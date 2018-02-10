@@ -14,8 +14,8 @@ print(a)
 b = numpy.ones((1, 2))
 print(b)
 
-c = numpy.full((2, 2), 7)
-print(c)
+# c = numpy.full((2, 2), 7)
+# print(c)
 
 d = numpy.eye(2)
 print(d)
