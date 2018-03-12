@@ -14,17 +14,19 @@ print(subX)
 print(preprocessing.scale(subX))
 
 # Scaling features to a range
-
+print("Scaling features to a range")
 min_max_scaler = preprocessing.MinMaxScaler()
 X_tran_minmax = min_max_scaler.fit_transform(X_train)
 print(X_tran_minmax)
 
 # MaxAbsScaler lies within the range [-1,1]
+print("MaxAbsScaler lies within the range [-1,1]")
 max_abs_scaler = preprocessing.MaxAbsScaler()
 X_tran_maxabs = max_abs_scaler.fit_transform(X_train)
 print(X_tran_maxabs)
 
 # Non-linear transformation
+print("Non-linear transformation")
 from sklearn.datasets import load_iris
 from sklearn.model_selection import train_test_split
 
@@ -44,7 +46,7 @@ X_trans = quantile_transformer.fit_transform(X)
 print(quantile_transformer.quantiles_)
 
 # Normalization
-
+print("Normalization")
 X = [[1., -1., 2.],
      [2., 0., 0.],
      [0., 1., -1.]]
@@ -62,6 +64,7 @@ print(normalizer.transform(X))
 
 # Binarization
 # Feature binarization
+print("Feature binarization")
 X = [[1., -1., 2.],
      [2., 0., 0.],
      [0., 1., -1.]]
@@ -69,6 +72,7 @@ binarizer = preprocessing.Binarizer().fit(X)
 print(binarizer.transform(X))
 
 # Imputation of missing values
+print("Imputation of missing values")
 from sklearn.preprocessing import Imputer
 
 imp = Imputer(missing_values='NaN', strategy='mean', verbose=0)
@@ -77,6 +81,7 @@ X = [[np.nan, 2], [6, np.nan], [7, 6]]
 print(imp.transform(X))
 
 # Generating polynomial features
+print("Generating polynomial features")
 from sklearn.preprocessing import PolynomialFeatures
 
 X = np.arange(6).reshape(3, 2)
